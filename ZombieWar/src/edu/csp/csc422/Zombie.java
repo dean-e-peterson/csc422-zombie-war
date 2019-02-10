@@ -5,11 +5,6 @@
  */
 package edu.csp.csc422;
 
-/*
-Comment from Diana Arita
-Second Comment
-*/
-
 public abstract class Zombie {
     private int health;
     private int damage;
