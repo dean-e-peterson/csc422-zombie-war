@@ -7,6 +7,7 @@ package edu.csp.csc422;
 
 /*
 Comment from Diana Arita
+Second Comment
 */
 
 public abstract class Zombie {
