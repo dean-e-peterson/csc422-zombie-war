@@ -44,14 +44,18 @@ public class ZombieWar {
         while((zombieList.size() > 0) && (survivorList.size() > 0)) {
        
             for (Survivor survivor : survivorList) {
-                // Always pick on the first (remaining) zombie.
-                Zombie zombie = zombieList.get(0);
+                // Each survivor attacks each zombie
                 int damage = survivor.getDamage();
-                zombie.setHealth(zombie.getHealth() - damage);
-                if (zombie.getHealth() <= 0) {
-                    // Dead.  Bye, zombie.
-                    System.out.println(survivor.getName() + " killed " + zombie.getName());
-                    zombieList.remove(0);
+                
+                for (int i = 0;i<zombieList.size();i++) {
+                    
+                    zombieList.get(i).setHealth(zombieList.get(i).getHealth() - damage);
+
+                    if (zombieList.get(i).getHealth() <= 0) {
+                        // Dead.  Bye, zombie.
+                        System.out.println(survivor.getName() + " killed " + zombieList.get(i).getName());
+                        zombieList.remove(i);
+                    }
                     // If that was last zombie, stop trying to hurt more.
                     if (zombieList.size() == 0) {
                         break;
@@ -62,13 +66,16 @@ public class ZombieWar {
             // Zombies go last.
             for (Zombie zombie : zombieList) {
                 // Always pick on the first (remaining) survivor.
-                Survivor survivor = survivorList.get(0);
                 int damage = zombie.getDamage();
-                survivor.setHealth(survivor.getHealth() - damage);
-                if (survivor.getHealth() <= 0) {
-                    // Dead.  Bye, survivor.
-                    System.out.println(zombie.getName() + " killed " + survivor.getName());
-                    survivorList.remove(0);
+                
+                for (int i = 0;i<survivorList.size();i++) {
+                    survivorList.get(i).setHealth(survivorList.get(i).getHealth() - damage);
+                    if (survivorList.get(i).getHealth() <= 0) {
+                        // Dead.  Bye, survivor.
+                        System.out.println(zombie.getName() + " killed " + survivorList.get(i).getName());
+                        survivorList.remove(i);
+                    }
+                    
                     // If that was last survivor, stop trying to hurt more.
                     if (survivorList.size() == 0) {
                         break;
