@@ -38,9 +38,9 @@ public class ZombieWar {
         
         //Output to the console
         System.out.println("We have " + survivorList.size() + " survivors trying to make it to safety.");
-        //System.out.println("(" + Child.count + " children, " + Teacher.count + " teachers, " + Soldier.count + " soldiers)");
+        System.out.println("(" + Child.count + " children, " + Teacher.count + " teachers, " + Soldier.count + " soldiers)");
         System.out.println("But there are " + zombieList.size() + " zombies waiting for them.");
-        //System.out.println("(" + CommonInfected.count + " common infected, " + Tank.count + " tanks)");
+        System.out.println("(" + CommonInfected.count + " common infected, " + Tank.count + " tanks)");
         
         // Go until some team is all gone.
         while((zombieList.size() > 0) && (survivorList.size() > 0)) {
@@ -55,7 +55,7 @@ public class ZombieWar {
 
                     if (zombieList.get(i).getHealth() <= 0) {
                         // Dead.  Bye, zombie.
-                        //System.out.println("    " + survivor.getName() + " killed " + zombieList.get(i).getName());
+                        System.out.println("    " + survivor.getName() + " killed " + zombieList.get(i).getName());
                         zombieList.remove(i);
                     }
                     // If that was last zombie, stop trying to hurt more.
@@ -74,7 +74,7 @@ public class ZombieWar {
                     survivorList.get(i).setHealth(survivorList.get(i).getHealth() - damage);
                     if (survivorList.get(i).getHealth() <= 0) {
                         // Dead.  Bye, survivor.
-                        //System.out.println("    " + zombie.getName() + " killed " + survivorList.get(i).getName());
+                        System.out.println("    " + zombie.getName() + " killed " + survivorList.get(i).getName());
                         survivorList.remove(i);
                     }
                     
