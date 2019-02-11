@@ -6,10 +6,10 @@
 package edu.csp.csc422;
 
 public class CommonInfected extends Zombie {
-    private static int count = 0;
+    public static int count = 0;
     
     public CommonInfected() {
-        setName("Common " + count++);
+        setName("CommonInfected " + count++);
         setHealth(30);
         setDamage(5);
     }

@@ -13,7 +13,7 @@ public class ZombieWar {
      * @param args the command line arguments
      */
     
-    private static int incrementingNumber = 0;
+    
     
     public static void main(String[] args) {
         List<Survivor> survivorList = new ArrayList<Survivor>();
@@ -38,7 +38,9 @@ public class ZombieWar {
         
         //Output to the console
         System.out.println("We have " + survivorList.size() + " survivors trying to make it to safety.");
+        //System.out.println("(" + Child.count + " children, " + Teacher.count + " teachers, " + Soldier.count + " soldiers)");
         System.out.println("But there are " + zombieList.size() + " zombies waiting for them.");
+        //System.out.println("(" + CommonInfected.count + " common infected, " + Tank.count + " tanks)");
         
         // Go until some team is all gone.
         while((zombieList.size() > 0) && (survivorList.size() > 0)) {
@@ -53,7 +55,7 @@ public class ZombieWar {
 
                     if (zombieList.get(i).getHealth() <= 0) {
                         // Dead.  Bye, zombie.
-                        System.out.println(survivor.getName() + " killed " + zombieList.get(i).getName());
+                        //System.out.println("    " + survivor.getName() + " killed " + zombieList.get(i).getName());
                         zombieList.remove(i);
                     }
                     // If that was last zombie, stop trying to hurt more.
@@ -72,7 +74,7 @@ public class ZombieWar {
                     survivorList.get(i).setHealth(survivorList.get(i).getHealth() - damage);
                     if (survivorList.get(i).getHealth() <= 0) {
                         // Dead.  Bye, survivor.
-                        System.out.println(zombie.getName() + " killed " + survivorList.get(i).getName());
+                        //System.out.println("    " + zombie.getName() + " killed " + survivorList.get(i).getName());
                         survivorList.remove(i);
                     }
                     
@@ -84,8 +86,14 @@ public class ZombieWar {
             }
         }
         
-        System.out.println("There are " + survivorList.size() + " survivors left.");
-        System.out.println("There are " + zombieList.size() + " zombies left.");
+        if (survivorList.size() > 0) {
+            System.out.println("It seems " + survivorList.size() + " have made it to safety.");
+        }
+        else {
+            System.out.println("None of the survivors made it.");
+        }
+        //System.out.println("There are " + survivorList.size() + " survivors left.");
+        //System.out.println("There are " + zombieList.size() + " zombies left.");
         
         System.exit(0);
     }
@@ -96,11 +104,11 @@ public class ZombieWar {
         int zombieTypeCode = rand.nextInt(3);
         switch (zombieTypeCode) {
             case 0: 
-                return new Soldier("Soldier " + incrementingNumber++);
+                return new Soldier();
             case 1:
-                return new Teacher("Teacher " + incrementingNumber++);
+                return new Teacher();
             default:
-                return new Child("Child " + incrementingNumber++);
+                return new Child();
         }
     }
 

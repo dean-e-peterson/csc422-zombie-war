@@ -11,8 +11,8 @@
      private int damage;
      private String name;
 
-     public Survivor(String name) {
-         this.name = name;
+     public Survivor() {
+
      }
 
      public int getHealth() {

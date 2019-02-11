@@ -6,7 +6,7 @@
 package edu.csp.csc422;
 
 public class Tank extends Zombie {
-    private static int count = 0;
+    public static int count = 0;
     
     public Tank() {
         setName("Tank " + count++);

@@ -6,9 +6,10 @@
 package edu.csp.csc422;
 
 public class Child extends Survivor {
-
-    public Child(String name) {
-        super(name);
+    public static int count = 0;
+    
+    public Child() {
+        setName("Child " + count++);
         setHealth(20);
         setDamage(2);
     }
