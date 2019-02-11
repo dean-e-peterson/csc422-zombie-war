@@ -103,9 +103,9 @@ public class ZombieWar {
         int zombieTypeCode = rand.nextInt(2);
         switch (zombieTypeCode) {
             case 0: 
-                return new CommonInfected("Common " + incrementingNumber++);
+                return new CommonInfected();
             default:
-                return new Tank("Tank " + incrementingNumber++);
+                return new Tank();
         }
     }
     

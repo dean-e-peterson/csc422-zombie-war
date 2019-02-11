@@ -10,8 +10,8 @@ public abstract class Zombie {
     private int damage;
     private String name;
     
-    public Zombie(String name) {
-        this.name = name;
+    public Zombie() {
+
     }
     
     public int getHealth() {
