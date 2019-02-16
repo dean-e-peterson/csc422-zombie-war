@@ -49,6 +49,8 @@ import java.util.Random;
                 return new Quarterstaff();
             case 4:
                 return new BecDeCorbin();
+            case 5:
+                return new KatanaSword();
             default:
                 return new Bazooka();
         }

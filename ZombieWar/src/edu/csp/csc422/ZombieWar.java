@@ -31,6 +31,9 @@ public class ZombieWar {
         System.out.println("Welcome To Zombie War!");
         System.out.println("Press Enter to Start the Game.");
         
+        Scanner scan = new Scanner(System.in);
+        scan.nextLine();
+        
         //Output to the console
         System.out.println("We have " + survivorList.size() + " survivors trying to make it to safety.");
         System.out.println("(" + Child.count + " children, " + Teacher.count + " teachers, " + Soldier.count + " soldiers)");
@@ -84,7 +87,7 @@ public class ZombieWar {
         }
         
         if (survivorList.size() > 0) {
-            System.out.println("It seems " + survivorList.size() + " have made it to safety.");
+            System.out.println("It seems " + survivorList.size() + " survivors have made it to safety.");
         }
         else {
             System.out.println("None of the survivors made it.");
