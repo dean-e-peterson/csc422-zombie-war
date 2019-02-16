@@ -9,7 +9,7 @@ public class Musket extends Weapon {
     
     public Musket() {
         setName("Musket");
-        setbaseDamage(60);
-        setAccuracy(30);
+        setbaseDamage(35);
+        setAccuracy(40);
     }
 }

@@ -9,12 +9,6 @@ import java.util.Random;
 
 public class ZombieWar {
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    
     public static void main(String[] args) {
         List<Survivor> survivorList = new ArrayList<Survivor>();
         List<Zombie> zombieList = new ArrayList<Zombie>();
@@ -45,7 +39,6 @@ public class ZombieWar {
         
         // Go until some team is all gone.
         while((zombieList.size() > 0) && (survivorList.size() > 0)) {
-            
             
             for (Survivor survivor : survivorList) {
                 int damage = survivor.getDamage();
@@ -127,7 +120,4 @@ public class ZombieWar {
                 return new Tank();
         }
     }
-    
-    
-    
 }

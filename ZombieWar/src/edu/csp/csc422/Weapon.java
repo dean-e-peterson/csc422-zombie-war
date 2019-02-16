@@ -31,12 +31,12 @@
      }
      public int getactualDamage() {
         Random rand = new Random();
-         if(rand.nextInt(100) < getAccuracy()){
-             System.out.println("hit");
+        
+        /*Calculate accuracy*/
+         if(rand.nextInt(100) < getAccuracy()){  
              return baseDamage;
          }
          else{
-             System.out.println("miss");
              return 0;
          }
      }
