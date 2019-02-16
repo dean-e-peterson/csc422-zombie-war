@@ -1,7 +1,7 @@
  /* 
   *Concordia CSC422 - Zombie War Group Assignment.
   * by Diana Arita, Rob Nelson, Andrew Nielsen, Dean Peterson.
-  * 2019-02-10
+  * 2019-02-16
   *
   */
  package edu.csp.csc422;
@@ -37,7 +37,7 @@ import java.util.Random;
      private static Weapon generateWeapon() {
         // Randomly choose which weapon to use.
         Random rand = new Random();
-        int weaponTypeCode = rand.nextInt(4);
+        int weaponTypeCode = rand.nextInt(6);
         switch (weaponTypeCode) {
             case 0: 
                 return new Musket();
@@ -45,6 +45,10 @@ import java.util.Random;
                 return new KeyBlade();
             case 2:
                 return new Pistol();
+            case 3:
+                return new Quarterstaff();
+            case 4:
+                return new BecDeCorbin();
             default:
                 return new Bazooka();
         }
