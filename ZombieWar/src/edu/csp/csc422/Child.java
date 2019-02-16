@@ -11,7 +11,6 @@ public class Child extends Survivor {
     public Child() {
         setName("Child " + count++);
         setHealth(20);
-        setDamage(2);
     }
 
 }

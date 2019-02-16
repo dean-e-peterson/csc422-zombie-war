@@ -18,10 +18,11 @@ public class ZombieWar {
     public static void main(String[] args) {
         List<Survivor> survivorList = new ArrayList<Survivor>();
         List<Zombie> zombieList = new ArrayList<Zombie>();
+        List<Weapon> weaponList = new ArrayList<Weapon>();
         
         // Randomly choose total number of Survivors and Zombies.
         Random rand = new Random();
-        int survivorCount = rand.nextInt(10) + 20;
+        int survivorCount = rand.nextInt(10) + 10;
         int zombieCount = rand.nextInt(10) + 10;
 
         for (int i = 0; i < survivorCount; i++) {
@@ -44,33 +45,36 @@ public class ZombieWar {
         
         // Go until some team is all gone.
         while((zombieList.size() > 0) && (survivorList.size() > 0)) {
-       
+            
+            
             for (Survivor survivor : survivorList) {
-                // Each survivor attacks each zombie
                 int damage = survivor.getDamage();
                 
-                for (int i = 0;i<zombieList.size();i++) {
-                    
-                    zombieList.get(i).setHealth(zombieList.get(i).getHealth() - damage);
+                // Each survivor attacks each zombie
 
-                    if (zombieList.get(i).getHealth() <= 0) {
-                        // Dead.  Bye, zombie.
-                        System.out.println("    " + survivor.getName() + " killed " + zombieList.get(i).getName());
-                        zombieList.remove(i);
+                    for (int i = 0; i < zombieList.size(); i++) {
+
+                        zombieList.get(i).setHealth(zombieList.get(i).getHealth() - damage);
+
+                        if (zombieList.get(i).getHealth() <= 0) {
+                            // Dead.  Bye, zombie.
+                            System.out.println("    " + survivor.getName() + " killed " + zombieList.get(i).getName() + " with a " + survivor.getWeaponName());
+                            zombieList.remove(i);
+                        }
+                        // If that was last zombie, stop trying to hurt more.
+                        if (zombieList.size() == 0) {
+                            break;
+                        }
                     }
-                    // If that was last zombie, stop trying to hurt more.
-                    if (zombieList.size() == 0) {
-                        break;
-                    }
-                }
+                
             }
-
+           
             // Zombies go last.
             for (Zombie zombie : zombieList) {
                 // Always pick on the first (remaining) survivor.
                 int damage = zombie.getDamage();
                 
-                for (int i = 0;i<survivorList.size();i++) {
+                for (int i = 0; i < survivorList.size(); i++) {
                     survivorList.get(i).setHealth(survivorList.get(i).getHealth() - damage);
                     if (survivorList.get(i).getHealth() <= 0) {
                         // Dead.  Bye, survivor.
@@ -123,5 +127,7 @@ public class ZombieWar {
                 return new Tank();
         }
     }
+    
+    
     
 }

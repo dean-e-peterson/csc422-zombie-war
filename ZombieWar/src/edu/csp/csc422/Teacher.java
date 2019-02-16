@@ -11,7 +11,6 @@ public class Teacher extends Survivor {
     public Teacher() {
         setName("Teacher " + count++);
         setHealth(50);
-        setDamage(5);
     }
 
 }
